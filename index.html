@@ -1,0 +1,209 @@
+.<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+        *{
+            font-family: 'Lato', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 30rem;
+            padding: 0;
+            margin: auto;
+            display: grid;
+            justify-content: center;
+
+        }
+
+        .searchDiv{
+            width: 100%;
+
+        }
+
+        input[type="text"]{
+            padding: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        #result {  
+            width: 100%; 
+            cursor: pointer;
+            overflow-y: auto; 
+            box-sizing: border-box;
+            z-index: 1001;
+            background-color: #f1f1f1; 
+        }
+
+        #result li{
+            padding: 0.5rem;
+        }
+
+        #search{
+            width: 100%;
+        }
+
+        .link-class:hover {
+            background-color: #f1f1f1;
+        }
+        .zutat-form{
+            width: 100%;
+            display: none;
+            flex-direction: row;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        .zutat-form button{
+            font-size: 2rem;
+            font-weight: bolder;
+            padding-inline: 2rem;
+
+        }
+ 
+
+        p{
+            text-align: left;
+            font-size: large;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+
+        }
+
+        ul{
+            list-style: none; 
+        }
+        
+        #result2 label{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid red;
+            font-size: 1.2rem;
+            padding-block: 0.6rem;
+            padding-inline: 0.2rem;
+            margin-bottom: 0.3rem;
+
+        }
+
+        #result2 input{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
+</head>
+
+<body> 
+    <div class="container" > 
+        <p>La Casa de Pizza</p> 
+        <div class="searchDiv" >
+            <input 
+            type="text" 
+            name="search" 
+            id="search" 
+            placeholder="Search Employee Details" 
+            class="form-control" />
+        </div>
+
+        <div class="zutat-form">
+            <input type="text" 
+            name="search" 
+            id="searchZutat" 
+            placeholder="Zutat" 
+            class="form-control " /> 
+            <button id="zutatAdd">+</button> 
+        </div>
+        <ul class="list-group" id="result"></ul>  
+  
+    <div>
+        <h4 id="name"></h4> 
+        <ul id="result2">
+        
+        </ul>
+    </div>
+    </div>
+</body>
+
+<script>
+
+        let content;
+        let name;
+        let nameElement = document.getElementById('name');
+        let zutatForm = document.querySelector('.zutat-form');
+        let result = document.getElementById("result2");
+        let second = document.getElementById("second");
+        var searchField = document.getElementById('search');
+        var resultContainer = document.getElementById('result');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        searchField.addEventListener('input', function () {
+            resultContainer.innerHTML = '';
+            result.innerHTML = '';
+            zutatForm.style.display = "none";
+            nameElement.innerHTML = '';
+            var searchValue = searchField.value.trim().toLowerCase();
+            
+            fetch('data.json')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) { 
+                    data.forEach(function (value) {
+                        if(isNaN(searchValue)){
+                            if (value.name.toLowerCase().startsWith(searchValue)) {
+                                var listItem = document.createElement('li');
+                                content = value.content.split(', '); 
+                                name = value.name;
+                                listItem.className = 'list-group-item link-class';                             
+                                listItem.innerHTML = value.name + ' | <span class="text-muted" >' + value.num + '</span>';
+                                resultContainer.appendChild(listItem);
+                            }
+                        }
+                        else
+                        {
+                            if (value.num.toLowerCase() === searchValue) {
+                                var listItem = document.createElement('li');
+                                content = value.content.split(', ');
+                                name = value.name;
+                                listItem.className = 'list-group-item link-class';
+                                listItem.innerHTML = value.name + ' | <span class="text-muted" >' + value.num + '</span>';
+                                resultContainer.appendChild(listItem);
+                            }
+                        }
+                    });
+                });
+        });
+        
+resultContainer.addEventListener('click', function (event) {
+            if (event.target.tagName === 'LI') {
+                showResult(name,content);
+                zutatForm.style.display = "flex";
+                var clickText = event.target.textContent.split('|');
+                searchField.value = clickText[0].trim();
+                resultContainer.innerHTML = '';
+            }
+        });
+
+
+
+    });
+
+
+    function showResult(name, content){
+
+        nameElement.innerHTML = name;
+        content.forEach(function(item){
+            let listItem = document.createElement('li');
+            listItem.innerHTML = ' <label for="'+item+'">'+item+' <input  id="' + item +'" type="checkbox" checked></label';
+            result.appendChild(listItem);
+        } )
+    }
+    
+</script>
+
+</html>
