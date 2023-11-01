@@ -6,20 +6,27 @@
 <style> 
   @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-        *{
+        *,*::after, *::before{
             font-family: 'Lato', sans-serif;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        html, body{
-            height: 100%;
-            width: 100%; 
+        html {
+            max-height: 100vh;
+            max-width: 100vw;  
         }
+
+        body{
+            max-height: 100vh;
+            max-width: 95vw;  
+            
+        }
+
         
 
         .container{
-            width: 30rem;
+            width: 25rem;
             padding: 0;
             margin: auto;
             display: flex;
@@ -120,7 +127,7 @@
 
         @media screen and (max-width:800px) {
             .container{
-                padding-inline: 1rem;
+                padding-inline: 0rem;
             }
         }
     </style>
@@ -134,7 +141,7 @@
             type="text" 
             name="search" 
             id="search" 
-            placeholder="Search Employee Details" 
+            placeholder="Nummer oder Namen eingeben" 
             class="form-control" />
         </div>
 
@@ -142,7 +149,7 @@
             <input type="text" 
             name="search" 
             id="searchZutat" 
-            placeholder="Zutat" 
+            placeholder="Zutat hinzugefügen" 
             class="form-control " /> 
             <!-- <button id="zutatAdd">+</button>  -->
         </div>
