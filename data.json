@@ -26,8 +26,13 @@
     "content": "Paprica, Parmesean, Anannas, Schinken"
   },
   {
-    "num":"0", 
-    "name":"Piza0",
+    "num":"2", 
+    "name":"Piza2",
+    "content": "Ei"
+  },
+  {
+    "num":"3", 
+    "name":"Piza3",
     "content": "Ei"
   }
 ]

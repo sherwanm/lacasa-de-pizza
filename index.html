@@ -45,6 +45,10 @@
             padding: 0.5rem;
         }
 
+        .list-group-item{
+            border-bottom: 1px solid red;
+        }
+
         #search{
             width: 100%;
         }
@@ -99,13 +103,8 @@
         }
 
         @media screen and (max-width:800px) {
-            body, html{
-                background-color: red;
-            }
+            
 
-            .container{
-                border:2px solid red;
-            }
         }
     </style>
 </head>
@@ -128,7 +127,7 @@
             id="searchZutat" 
             placeholder="Zutat" 
             class="form-control " /> 
-            <button id="zutatAdd">+</button> 
+            <!-- <button id="zutatAdd">+</button>  -->
         </div>
         <ul class="list-group" id="result"></ul>  
   
@@ -143,17 +142,22 @@
 
 <script>
 
-        let content;
-        let name;
+ 
         let nameElement = document.getElementById('name');
-        let zutatForm = document.querySelector('.zutat-form');
-        let result = document.getElementById("result2");
-        let second = document.getElementById("second");
+        let zutatForm   = document.querySelector('.zutat-form');
+        let result      = document.getElementById("result2");
+        let second      = document.getElementById("second");
         var searchField = document.getElementById('search');
+        var searchZutat = document.getElementById('searchZutat');
         var resultContainer = document.getElementById('result');
+        let currentZutat = [];  
+        let allZutat = [];  
+
+
 
     document.addEventListener('DOMContentLoaded', function () {
-        searchField.addEventListener('input', function () {
+    searchField.addEventListener('input', function () {
+            currentZutat = [];
             resultContainer.innerHTML = '';
             result.innerHTML = '';
             zutatForm.style.display = "none";
@@ -169,8 +173,9 @@
                         if(isNaN(searchValue)){
                             if (value.name.toLowerCase().startsWith(searchValue)) {
                                 var listItem = document.createElement('li');
-                                content = value.content.split(', '); 
-                                name = value.name;
+                                let content = value.content.split(', '); 
+                                let name = value.name; 
+                                addEvent(content, name, listItem);
                                 listItem.className = 'list-group-item link-class';                             
                                 listItem.innerHTML = value.name + ' | <span class="text-muted" >' + value.num + '</span>';
                                 resultContainer.appendChild(listItem);
@@ -180,8 +185,9 @@
                         {
                             if (value.num.toLowerCase() === searchValue) {
                                 var listItem = document.createElement('li');
-                                content = value.content.split(', ');
-                                name = value.name;
+                                let content = value.content.split(', ');
+                                let name = value.name;
+                                addEvent(content, name, listItem);
                                 listItem.className = 'list-group-item link-class';
                                 listItem.innerHTML = value.name + ' | <span class="text-muted" >' + value.num + '</span>';
                                 resultContainer.appendChild(listItem);
@@ -189,33 +195,74 @@
                         }
                     });
                 });
+        });//searchField.addEventListener('input', function () {
+
+
+        searchZutat.addEventListener('input', function(){
+            resultContainer.innerHTML = ''; 
+            var searchValue = searchZutat.value.trim().toLowerCase();
+            if(searchValue == '') return;
+            fetch('data.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                data.forEach(function (value){
+                    let ar = value.content.split(', '); 
+                    ar.forEach(function(val){
+                    console.log(val);
+                        if (val.toLowerCase().startsWith(searchValue) && !currentZutat.includes(val) ){ 
+                            var listItem = document.createElement('li');
+                            addEventZutat(val,listItem );
+                            listItem.className = 'list-group-item link-class';
+                            listItem.innerHTML = ' <span class="text-muted" >' + val + '</span>';
+                            resultContainer.appendChild(listItem);
+                        } 
+                        });
+                    });
+                });
+            }); //searchZutat.addEventListener('input', function () {
+         
+    });//document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+    function addEvent(content, name, listItem){
+        listItem.addEventListener('click', function(){
+            zutatForm.style.display = "flex";
+            var clickText = event.target.textContent.split('|');
+            searchField.value = '';
+            resultContainer.innerHTML = '';            
+            showResult(name,content);
         });
-        
-resultContainer.addEventListener('click', function (event) {
-            if (event.target.tagName === 'LI') {
-                showResult(name,content);
-                zutatForm.style.display = "flex";
-                var clickText = event.target.textContent.split('|');
-                searchField.value = clickText[0].trim();
-                resultContainer.innerHTML = '';
-            }
-        });
 
+    }
 
-
-    });
-
-
-    function showResult(name, content){
-
+    function showResult(name, content){ 
         nameElement.innerHTML = name;
         content.forEach(function(item){
+            currentZutat.push(item);
             let listItem = document.createElement('li');
             listItem.innerHTML = ' <label for="'+item+'">'+item+' <input  id="' + item +'" type="checkbox" checked></label';
             result.appendChild(listItem);
         } )
     }
+
+    function addEventZutat(val, listItem){
+        listItem.addEventListener('click', function(){ 
+            searchZutat.value = '';
+            resultContainer.innerHTML = '';  
+            showResultZutat(val);
+        });
+    }
     
+        function showResultZutat(name, content) { 
+                currentZutat.push(name);
+                let listItem = document.createElement('li');
+                listItem.innerHTML = ' <label for="' + name + '">' + name + ' <input  id="' + name + '" type="checkbox" checked></label';
+                result.appendChild(listItem); 
+        }
 </script>
 
 </html>
