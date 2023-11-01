@@ -1,38 +1,28 @@
-
-[
+[ 
   {
-    "num":"1",
-    "name":"Piza1",
-    "content": "Tomaten, Zwiebeln"
-  },
-  {
-    "num":"2",
-    "name":"APiza2",
-    "content": "Käse"
-  },
-  {
-    "num":"13", 
-    "name":"BPiza13",
-    "content": "Salami, Scharfe Peproni"
-  },
-  {
-    "num":"11", 
-    "name":"CPiza11",
-    "content": "Sucuk, Ei"
-  },
-  {
-    "num":"10", 
-    "name":"DPiza10",
-    "content": "Paprica, Parmesean, Anannas, Schinken"
+    "num":"1", 
+    "name":"Margherita ",
+    "content": "Tomatensauce, Goudkäse"
   },
   {
     "num":"2", 
-    "name":"Piza2",
-    "content": "Ei"
+    "name":"Salami",
+    "content": "Salami"
   },
   {
     "num":"3", 
-    "name":"Piza3",
-    "content": "Ei"
-  }
-]
+    "name":"Prosciutto",
+    "content": "Schinken"
+  },
+  {
+    "num":"4", 
+    "name":"Funghi",
+    "content": "Champignons"
+  } ,
+  {
+    "num":"5", 
+    "name":"Romana",
+    "content": "Schinken, Champignons"
+  } 
+
+] 

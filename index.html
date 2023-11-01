@@ -102,6 +102,10 @@
             height: 1.5rem;
         }
 
+        #name{
+            margin-bottom: 0.5rem;
+        }
+
         @media screen and (max-width:800px) {
             
 
@@ -143,17 +147,14 @@
 <script>
 
  
-        let nameElement = document.getElementById('name');
-        let zutatForm   = document.querySelector('.zutat-form');
-        let result      = document.getElementById("result2");
-        let second      = document.getElementById("second");
-        var searchField = document.getElementById('search');
-        var searchZutat = document.getElementById('searchZutat');
-        var resultContainer = document.getElementById('result');
-        let currentZutat = [];  
-        let allZutat = [];  
-
-
+    let nameElement = document.getElementById('name');
+    let zutatForm   = document.querySelector('.zutat-form');
+    let result      = document.getElementById("result2");
+    let second      = document.getElementById("second");
+    var searchField = document.getElementById('search');
+    var searchZutat = document.getElementById('searchZutat');
+    var resultContainer = document.getElementById('result');
+    let currentZutat = [];   
 
     document.addEventListener('DOMContentLoaded', function () {
     searchField.addEventListener('input', function () {
@@ -165,9 +166,9 @@
             var searchValue = searchField.value.trim().toLowerCase();
             
             fetch('data.json')
-                .then(function (response) {
+            .then(function (response) {
                     return response.json();
-                })
+            })
                 .then(function (data) { 
                     data.forEach(function (value) {
                         if(isNaN(searchValue)){
@@ -195,34 +196,32 @@
                         }
                     });
                 });
-        });//searchField.addEventListener('input', function () {
-
-
+        });
+        
+        //searchField.addEventListener('input', function () {
+ 
         searchZutat.addEventListener('input', function(){
             resultContainer.innerHTML = ''; 
             var searchValue = searchZutat.value.trim().toLowerCase();
             if(searchValue == '') return;
-            fetch('data.json')
+            fetch('content.json')
             .then(function (response) {
                 return response.json();
             })
-            .then(function (data) {
-                data.forEach(function (value){
-                    let ar = value.content.split(', '); 
-                    ar.forEach(function(val){
+            .then(function (data) { 
+                data.content.forEach(function (val){ 
                     console.log(val);
-                        if (val.toLowerCase().startsWith(searchValue) && !currentZutat.includes(val) ){ 
+                        if(val.toLowerCase().startsWith(searchValue) && !currentZutat.includes(val) ){ 
                             var listItem = document.createElement('li');
                             addEventZutat(val,listItem );
                             listItem.className = 'list-group-item link-class';
                             listItem.innerHTML = ' <span class="text-muted" >' + val + '</span>';
                             resultContainer.appendChild(listItem);
-                        } 
-                        });
+                        }  
                     });
-                });
+
+                });//.then(function (data) {
             }); //searchZutat.addEventListener('input', function () {
-         
     });//document.addEventListener('DOMContentLoaded', function () {
 
 
