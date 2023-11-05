@@ -23,6 +23,394 @@
     "num":"5", 
     "name":"Romana",
     "content": "Schinken, Champignons"
+  } ,
+  {
+    "num":"6", 
+    "name":"Rustica ",
+    "content": "Salami, milde Peperoni"
   } 
+ ,
+  {
+    "num":"7", 
+    "name":"Tonno",
+    "content": "Thunfisch , Zwiebeln"
+  } 
+ ,
+  {
+    "num":"8", 
+    "name":"Hawaii ",
+    "content": "Schinken, Ananas "
+  } 
+ ,
+  {
+    "num":"9", 
+    "name":"Italy ",
+    "content": "Salami, Schinken  "
+  }  ,
+  {
+    "num": "10",
+    "name": "Gyros",
+    "content": "Dönerfleisch, Zwiebeln"
+  },
+  {
+    "num": "11",
+    "name": "Chicken Hollandaise ",
+    "content": "Hähnchenbrust,  Sauce Hollandaise"
+  },
+  {
+    "num": "12",
+    "name": "La Casa de Pizza",
+    "content": "Hähnchenbrust, Zwiebeln, Sauce Hollandaise, Scharfe Peperoni"
+  },
+  {
+    "num": "13",
+    "name": "El Professor ",
+    "content": "Sucuk, Jalapenos, Zwiebeln, Sauce Hollandaise"
+  },
+  {
+    "num": "13a.",
+    "name": "Stoskholm",
+    "content": "Oliven, fr. Tomaten, Zwiebeln, Mais"
+  },
+  {
+    "num": "14",
+    "name": "Berlin",
+    "content": "Oliven, Thunfisch, Zwiebeln, Peperoni"
+  },
+  {
+    "num": "14a",
+    "name": "Palermo",
+    "content": "BBQ Sauce, Hackfleisch, Zwiebeln, Peperoni"
+  },
+  {
+    "num": "15",
+    "name": "Nairobi ",
+    "content": "Paprika, Champignons, Broccoli, Sauce Hollandaise"
+  },
+  {
+    "num": "16",
+    "name": "Denver ",
+    "content": "Salami, Schinken, Bacon, BBQ Sauce "
+  },
+  {
+    "num": "17",
+    "name": "Sucuk ",
+    "content": "Sucuk , Ei"
+  },
+  {
+    "num": "18",
+    "name": "Vegetaria",
+    "content": "Oliven', Mais, Paprika, Artischocken, Broccoli"
+  },
+  {
+    "num": "19",
+    "name": "Rucola",
+    "content": "Schinken, fr. Rucola, fr. Tomaten, Parmesan"
+  },
+  {
+    "num": "20",
+    "name": "Broccoli",
+    "content": "Broccoli,  fr. Tomaten, fr. Rudola"
+  }, 
+  {
+    "num": "21",
+    "name": "Spinat",
+    "content": "Spinat, Hirtenkäse, Knoblauch "
+  },
+  {
+    "num": "22",
+    "name": "Mozzarella",
+    "content": "fr. Tomaten, Oliven , Mezzarella"
+  },
+  {
+    "num": "23",
+    "name": "Taormina",
+    "content": "Hähnchenbrust , Jalapenos , Zwiebeln,  Hirtenkäse, Sauce Hollandaise  "
+  },
+  {
+    "num": "24",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "25",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "26",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "27",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "28",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "29",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "30",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "31",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "32",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "33",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "34",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "35",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "36",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "37",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "38",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "39",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "40",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "41",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "42",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "43",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "44",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "45",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "46",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "47",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "48",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "49",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "50",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "51",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "52",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "53",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "54",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "55",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "56",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "57",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "58",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "59",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "60",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "61",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "62",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "63",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "64",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "65",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "66",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "67",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "68",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "69",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "70",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "71",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "72",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "73",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "74",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "75",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "76",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "77",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "78",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "79",
+    "name": "",
+    "content": ""
+  },
+  {
+    "num": "80",
+    "name": "",
+    "content": ""
+  }
 
 ] 
