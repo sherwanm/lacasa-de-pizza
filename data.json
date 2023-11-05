@@ -324,12 +324,12 @@
   },
   {
     "num": "65",
-    "name": " Gemischter Salat",
+    "name": "Gemischter Salat",
     "content": "Mais"
   },
   {
     "num": "66",
-    "name": " Bauern Salat",
+    "name": "Bauern Salat",
     "content": "gemischter Salat, Hirtenkäse"
   },
   {
@@ -340,7 +340,7 @@
   {
     "num": "68",
     "name": "Griechischer Salat",
-    "content": " Oliven, Hirtenkäse, Peperoni"
+    "content": "Oliven, Hirtenkäse, Peperoni"
   },
   {
     "num": "69",
@@ -359,7 +359,7 @@
   },
   {
     "num": "72",
-    "name": " La Casa de Salat",
+    "name": "La Casa de Salat",
     "content": "gemischter Salat, Mozzarella, Schinken, Hähnchenbrust, Rucola"
   },
   {
@@ -379,28 +379,82 @@
   },
   {
     "num": "76",
-    "name": "xx",
-    "content": ""
+    "name": "Döner Special",
+    "content": "Dönerfleisch, Zwiebeln, Tzatziki, fr. Tomaten, Hitenkäse"
   },
   {
     "num": "77",
-    "name": "",
-    "content": ""
+    "name": "Döner Metaxa",
+    "content": "Metaxasauce, Dönerfleisch, Zwiebeln, Tomaten"
   },
   {
     "num": "78",
-    "name": "",
+    "name": "La Casa de Döner",
+    "content": "Dönerfleisch, Zwiebeln, Scharfe Peperoni, Hollandaise Sauce"
+  },
+  {
+    "num": "85",
+    "name": "Biffteki Teller",
     "content": ""
   },
   {
-    "num": "79",
-    "name": "",
+    "num": "86",
+    "name": "Steak Teller",
     "content": ""
   },
   {
-    "num": "80",
-    "name": "",
+    "num": "87",
+    "name": "Hähnchenspieß shish Tavuk",
     "content": ""
-  }
-
+  },
+  {
+    "num": "88",
+    "name": "Souflaki Teller",
+    "content": ""
+  },
+  {
+    "num": "89",
+    "name": "Grill Teller",
+    "content": "Hähnchenspieß , Lammkotelette"
+  },
+  {
+    "num": "90",
+    "name": "Kuzu Pirzola",
+    "content": "Lammkotelettes"
+  },
+  {
+    "num": "91",
+    "name": "La Casa de Platte (für 2 Personen)",
+    "content": ""
+  },
+  {
+    "num": "92",
+    "name": "La Casa de Platte (für 4 Personen)",
+    "content": ""
+  },
+  {
+    "num": "95",
+    "name": "Chipotti Pita",
+    "content": "gem. Salat, Zwiebeln, Pommes, Mayonnaise"
+  },
+  {
+    "num": "96",
+    "name": "Falafel Pita",
+    "content": " Stk. Falafel, gem. Salat, Zwiebeln"
+  },
+  {
+    "num": "97",
+    "name": "Falafel Pita",
+    "content": "4 Stk. Falafel, gem. Salat, Zwiebeln, Tzatziki Sauce"
+  },
+  {
+    "num": "98",
+    "name": "Falafel Pita ",
+    "content": "4 Stk. Falafel, gem. Salat, Zwiebeln, Cocktails Sauce, Hirtenkäse"
+  },
+  {
+    "num": "99",
+    "name": "Falafel Teller",
+    "content": "6 Stk Falafel, gem. Salat, Tzatziki.G, Pommes, Reis"
+  } 
 ] 
