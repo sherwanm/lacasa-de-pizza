@@ -236,7 +236,6 @@
             })
             .then(function (data) { 
                 data.content.forEach(function (val){ 
-                    console.log(val);
                         if(val.toLowerCase().startsWith(searchValue) && !currentZutat.includes(val) ){ 
                             var listItem = document.createElement('li');
                             addEventZutat(val,listItem );
@@ -267,10 +266,13 @@
     function showResult(name, content){ 
         nameElement.innerHTML = name;
         content.forEach(function(item){
-            currentZutat.push(item);
-            let listItem = document.createElement('li');
-            listItem.innerHTML = ' <label for="'+item+'">'+item+' <input  id="' + item +'" type="checkbox" checked></label';
-            result.appendChild(listItem);
+            if(item != "")
+            {
+                currentZutat.push(item);
+                let listItem = document.createElement('li');
+                listItem.innerHTML = ' <label for="'+item+'">'+item+' <input  id="' + item +'" type="checkbox" checked></label';
+                result.appendChild(listItem);
+            }
         } )
     }
 
