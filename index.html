@@ -198,13 +198,15 @@
                     data.forEach(function (value) {
                         if(isNaN(searchValue)){
                             if (value.name.toLowerCase().startsWith(searchValue)) {
-                                var listItem = document.createElement('li');
-                                let content = value.content.split(', '); 
-                                let name = value.name; 
-                                addEvent(content, name, listItem);
-                                listItem.className = 'list-group-item link-class';                             
-                                listItem.innerHTML = value.name + ' | <span class="text-muted" >' + value.num + '</span>';
-                                resultContainer.appendChild(listItem);
+                                if (resultContainer.childElementCount < 4){
+                                    var listItem = document.createElement('li');
+                                    let content = value.content.split(', '); 
+                                    let name = value.name; 
+                                    addEvent(content, name, listItem);
+                                    listItem.className = 'list-group-item link-class';                             
+                                    listItem.innerHTML = value.name + ' | <span class="text-muted" >' + value.num + '</span>';
+                                    resultContainer.appendChild(listItem);
+                                }
                             }
                         }
                         else
@@ -236,11 +238,13 @@
             .then(function (data) { 
                 data.content.forEach(function (val){ 
                         if(val.toLowerCase().startsWith(searchValue) && !currentZutat.includes(val) ){ 
-                            var listItem = document.createElement('li');
-                            addEventZutat(val,listItem );
-                            listItem.className = 'list-group-item link-class';
-                            listItem.innerHTML = ' <span class="text-muted" >' + val + '</span>';
-                            resultContainer.appendChild(listItem);
+                                if (resultContainer.childElementCount < 4) {
+                                var listItem = document.createElement('li');
+                                addEventZutat(val,listItem );
+                                listItem.className = 'list-group-item link-class';
+                                listItem.innerHTML = '<span class="text-muted" >' + val + '</span>';
+                                resultContainer.appendChild(listItem);
+                            }
                         }  
                     });
 
